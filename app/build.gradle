@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "ru.idaspin.tatar.in"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_ENDPOINT", '"http://u0395122.isp.regruhosting.ru/"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+apply from: '../versions.gradle'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile "com.android.support:design:$supportVersion"
+    compile "com.android.support:support-v4:$supportVersion"
+
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+
+    compile "io.reactivex:rxandroid:$rxandroidVersion"
+    compile "io.reactivex:rxjava:$rxjavaVersion"
+    compile "ru.arturvasilov:rx-loader:$rxLoaderVersion"
+
+    compile "com.costular:kotlin-utils:$kotlinVersion"
+
+    compile "com.github.mancj:MaterialSearchBar:$searchBarVersion"
+    compile "me.grantland:autofittextview:$autoFitTextViewVersion"
+    compile "com.github.droidbyme:DroidDialog:$droidDialogVersion"
+    compile "com.github.glomadrian:Grav:$gravVersion"
+
+    compile "com.google.firebase:firebase-core:$firebaseVersion"
+    testCompile "junit:junit:$junitVersion"
+}
+
+apply plugin: 'com.google.gms.google-services'

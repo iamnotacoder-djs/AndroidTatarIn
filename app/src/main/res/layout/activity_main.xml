@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_bb">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlackTransparent">
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@id/main_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mt_hint="@string/search_bar_hint"
+            app:mt_placeholder="@string/search_bar_placeholder"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.github.glomadrian.grav.GravView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+            app:array_colors="@array/bubble"
+            app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+            app:regular_cell_size="300"
+            app:regular_variance="200"
+            app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+            app:ball_from_size="10dp"
+            app:ball_to_size="20dp"
+            app:animationGenerators="@array/BubbleAnimations"
+            app:side_to_side_min_duration="10000"
+            app:side_to_side_max_duration="10000"
+            app:side_to_side_direction="leftToRight"
+            app:shake_direction="vertical"
+            app:shake_min_duration="10000"
+            app:shake_max_duration="20000"
+            app:shake_variance="500dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32dp">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:id="@id/main_text_result"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="3"
+                        android:textSize="50sp"
+                        autofit:minTextSize="16sp"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:paddingBottom="32dp"/>
+
+                    <ru.idaspin.tatar.in.widgets.recycler.EmptyRecyclerView
+                        android:id="@id/main_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@id/main_layout_pulsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@id/bottom_bar_label_rus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bottom_bar_label_rus"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"/>
+
+                <ImageView
+                    android:id="@id/main_button_translate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_translate"
+                    android:contentDescription="@string/bottom_bar_button_descr"/>
+
+                <TextView
+                    android:id="@id/bottom_bar_label_tat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bottom_bar_label_tat"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

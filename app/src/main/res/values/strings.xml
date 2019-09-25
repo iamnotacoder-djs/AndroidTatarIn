@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tatar.in</string>
+    <string name="search_bar_hint">1й(Ɵй), кетчуп, хыялланучан…</string>
+    <string name="search_bar_placeholder">Что переводим?</string>
+    <string name="bottom_bar_label_rus">Русский</string>
+    <string name="bottom_bar_label_tat">Татарский</string>
+    <string name="bottom_bar_button_descr">Кнопка \"Перевести\"</string>
+    <string name="action_help">Помощь</string>
+    <string name="help_url">https://vk.com/im?sel=-150650945</string>
+</resources>

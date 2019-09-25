@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_search_bar" type="id"/>
+    <item name="main_text_result" type="id"/>
+    <item name="main_button_translate" type="id"/>
+    <item name="main_layout_pulsing" type="id"/>
+    <item name="bottom_bar_label_rus" type="id"/>
+    <item name="bottom_bar_label_tat" type="id"/>
+    <item name="main_recycler" type="id"/>
+    <item name="item_text" type="id"/>
+    <item name="action_help" type="id"/>
+</resources>
