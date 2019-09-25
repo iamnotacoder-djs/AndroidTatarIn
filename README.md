@@ -1,0 +1,2 @@
+# tatarin
+Android app - translator
